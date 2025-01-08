@@ -222,9 +222,13 @@ getHead([1, 3, 4, 5], 2);
  *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  if (n === 0) {
+    return [];
+  }
+  return arr.slice(-n);
 }
+getTail([1, 3, 4, 5], 2);
 
 /**
  * Returns the doubled array - elements of the specified array
@@ -238,9 +242,11 @@ function getTail(/* arr, n */) {
  *    doubleArray([0, 1, 2, 3, 4, 5]) => [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
  *    doubleArray([]) => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  const secondArr = arr;
+  return arr.concat(secondArr);
 }
+doubleArray(['Ace', 10, true]);
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter.
@@ -253,9 +259,10 @@ function doubleArray(/* arr */) {
  *    toStringList([1, 2, 3, 4, 5]) => '1,2,3,4,5'
  *    toStringList(['rock', 'paper', 'scissors']) => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join();
 }
+toStringList([0, false, 'cat', NaN, true, '']);
 
 /**
  * Returns array containing only unique values from the specified array.
