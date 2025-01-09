@@ -413,9 +413,14 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  let result = 0;
+  const falseElements = arr.filter((element) => Boolean(element) === false);
+  result = falseElements.length;
+  return result;
 }
+
+getFalsyValuesCount([1, '', 3]);
 
 /**
  * Creates an identity matrix of the specified size.
