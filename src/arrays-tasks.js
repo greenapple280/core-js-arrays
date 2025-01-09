@@ -326,9 +326,11 @@ flattenArray([1, 2, 3, 4]);
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  return arr.flatMap(childrenSelector);
 }
+
+selectMany(['one', 'two', 'three'], (x) => x.split(''));
 
 /**
  * Every month, you record your income and expenses.
@@ -375,9 +377,13 @@ function createChunks(/* arr, chunkSize */) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const newArr = Array.from({ length: len }, (value, index) => index * 2 + 1);
+
+  return newArr;
 }
+
+generateOdds(1);
 
 /**
  * Returns an element from the multidimensional array by the specified indices.
