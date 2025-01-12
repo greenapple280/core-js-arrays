@@ -345,8 +345,10 @@ selectMany(['one', 'two', 'three'], (x) => x.split(''));
  *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
  *   calculateBalance([]) => 0
  */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
+function calculateBalance(arr) {
+  return arr.reduce((balance, [income, expense]) => {
+    return balance + (income - expense);
+  }, 0);
 }
 
 /**
